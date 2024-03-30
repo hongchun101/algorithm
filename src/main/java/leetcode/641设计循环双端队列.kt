@@ -1,7 +1,6 @@
 package leetcode
 
-import java.util.Deque
-import java.util.LinkedList
+import java.util.*
 
 class `641设计循环双端队列` {
 }
@@ -18,9 +17,9 @@ class MyCircularDeque(k: Int) {
         return if (isFull()) {
             false
         } else {
-            deque.add(0, value)
+            deque.offerFirst(value)
             size++
-            return true
+            true
         }
     }
 
@@ -28,7 +27,7 @@ class MyCircularDeque(k: Int) {
         return if (isFull()) {
             false
         } else {
-            deque.add(value)
+            deque.offerLast(value)
             size++
             true
         }
